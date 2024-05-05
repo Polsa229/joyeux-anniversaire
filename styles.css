@@ -1,0 +1,102 @@
+:root {
+  --p-sombre: #fa47ec;
+  --p-clair: #f7aaf1;
+}
+
+@-webkit-keyframes scale-up-center {
+  0% {
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5);
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+@keyframes scale-up-center {
+  0% {
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5);
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+body {
+  -webkit-animation: scale-up-center 0.4s ease-in both;
+  animation: scale-up-center 0.4s ease-in both;
+}.text-p {
+  color: var(--p-clair);
+}
+.text-p2 {
+  color: var(--p-sombre);
+}
+
+.h-screen {
+  min-height: 100vh;
+  overflow:hidden;
+}
+
+/*------ Settings ------*/
+.container-sound-controler{
+position: absolute;
+right: 20%;
+top: 10%;
+z-index: 7;
+}
+
+.container-control-sound {
+  --color: #a5a5b0;
+  --size: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  position: relative;
+  cursor: pointer;
+  font-size: var(--size);
+  user-select: none;
+  fill: var(--color);
+}
+
+.container-control-sound .mute {
+  position: absolute;
+  animation: keyframes-fill .5s;
+}
+
+.container-control-sound .voice {
+  position: absolute;
+  display: none;
+  animation: keyframes-fill .5s;
+}
+
+/* ------ On check event ------ */
+.container-control-sound input:checked ~ .mute {
+  display: none;
+}
+
+.container-control-sound input:checked ~ .voice {
+  display: block;
+}
+
+/* ------ Hide the default checkbox ------ */
+.container-control-sound input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* ------ Animation ------ */
+@keyframes keyframes-fill {
+  0% {
+    transform: rotate(0deg) scale(0);
+    opacity: 0;
+  }
+
+  50% {
+    transform: rotate(-10deg) scale(1.2);
+  }
+}
