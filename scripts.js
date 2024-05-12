@@ -26,6 +26,7 @@ function removeDotStyle ( lettre )
 document.addEventListener( "DOMContentLoaded", () =>
 {
 
+    console.log( "%c© 2024 Pétas Ola-Oluwa HODONOU. Tous droits réservés.", "font-size: 16px; color: #3366ff;" );
 
     var drawn_with_dot = document.querySelector( "#drawn-with-dot" );
     
